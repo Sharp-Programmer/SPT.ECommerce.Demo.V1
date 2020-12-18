@@ -1,1 +1,1 @@
-# SPT.ECommerce.Demo.V1
+# Sharp Programmer Tutorials eCommerce Demo
