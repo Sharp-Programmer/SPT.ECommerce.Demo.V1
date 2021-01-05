@@ -37,6 +37,7 @@ namespace SPT.eCommerce.Api.Service
                 return Result<Product>.NoContent();
             }
 
+            _logger.LogInformation($"Fetched product details with product id {productId}");
             return Result<Product>.Success(product);
         }
     }
