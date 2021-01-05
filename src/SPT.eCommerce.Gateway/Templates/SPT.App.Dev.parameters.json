@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "hostingPlanName": {
+      "value": "App-Dev-ASP"
+    },
+    "websiteName": {
+      "value": "spt-ecommerce-api-dev"
+    },
+    "skuName": {
+      "value": "B1"
+    },
+    "resourceTags": {
+      "value": {
+        "Environment": "Development",
+        "Project": "Training"
+      }
+    }
+  }
+}

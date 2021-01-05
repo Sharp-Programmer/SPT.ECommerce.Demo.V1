@@ -5,6 +5,7 @@
 		<LangVersion>8.0</LangVersion>
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<UserSecretsId>27e0ea9d-8a86-4183-b95f-75f07b88fac9</UserSecretsId>
 	</PropertyGroup>
 
 	<ItemGroup>

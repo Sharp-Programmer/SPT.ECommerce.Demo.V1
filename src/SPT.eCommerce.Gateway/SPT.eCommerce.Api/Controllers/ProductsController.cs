@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 using SPT.eCommerce.Api.Entity;
 using SPT.eCommerce.Api.Service;
@@ -21,14 +22,16 @@ namespace SPT.eCommerce.Api.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly IProductService _productService;
+        private readonly ILogger<ProductsController> _logger;
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="productService">IProductService Instance</param>
-        public ProductsController(IProductService productService)
+        public ProductsController(IProductService productService, ILogger<ProductsController> logger)
         {
             _productService = productService;
+            _logger = logger;
         }
 
         /// <summary>
@@ -43,6 +46,7 @@ namespace SPT.eCommerce.Api.Controllers
         [ProducesResponseType(typeof(Product[]), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetProductsAsync()
         {
+            _logger.LogInformation("Fetching all products");
             return await ActionResultBuilder.ExecuteAndBuildResult(() => _productService.GetProductsAsync());
         }
 
@@ -62,6 +66,8 @@ namespace SPT.eCommerce.Api.Controllers
         [SwaggerResponse(200, "Returns product with matching product Id", typeof(Product))]
         public async Task<IActionResult> GetProductByIdAsync(Guid productId)
         {
+            _logger.LogInformation($"Fetching product details with id {productId}");
+
             return await ActionResultBuilder.ExecuteAndBuildResult(() => _productService.GetProductByIdAsync(productId));
         }
     }
