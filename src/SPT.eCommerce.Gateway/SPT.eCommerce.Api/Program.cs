@@ -19,6 +19,7 @@ namespace SPT.eCommerce.Api
             .ConfigureLogging((ctx, logging)=>
                 {
                     logging.ClearProviders();
+                    logging.AddConsole();
                     logging.AddConfiguration(ctx.Configuration.GetSection("Logging"));
                 }
             )

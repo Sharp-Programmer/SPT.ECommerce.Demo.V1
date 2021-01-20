@@ -28,6 +28,7 @@ namespace SPT.eCommerce.Api.Controllers
         /// Constructor
         /// </summary>
         /// <param name="productService">IProductService Instance</param>
+        /// <param name="logger"></param>
         public ProductsController(IProductService productService, ILogger<ProductsController> logger)
         {
             _productService = productService;
