@@ -31,7 +31,8 @@ namespace SPT.eCommerce.Api.Controllers
         {
             _logger.LogInformation("Sharp Programmer Tutorials - eCommerce Gateway api is running!");
 
-            return Ok(new {
+            return Ok(new
+            {
                 message = "Sharp Programmer Tutorials - eCommerce Sample project is running!",
                 tryIt = $"{Request.Scheme}://{Request.Host}/docs/index.html"
             }); ;
